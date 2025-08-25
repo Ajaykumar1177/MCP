@@ -15,24 +15,3 @@ async def main():
         print("Text Result:", text_result.content[0].text)
 
 asyncio.run(main())
-
-# import asyncio
-# import sys
-# from pathlib import Path
-# from mcp.client.session import ClientSession
-# from mcp.client.stdio import stdio_client, StdioServerParameters
-
-# async def main():
-#     project_root = Path(__file__).resolve().parent  # adjust if needed
-#     params = StdioServerParameters(
-#         command=sys.executable,
-#         args=["-m", "mcp_demo.server"],
-#         cwd=str(project_root.parent),
-#     )
-#     async with stdio_client(params) as (read, write):
-#         async with ClientSession(read, write) as session:
-#             await session.initialize()
-#             print(await session.call_tool("add", {"a": 6, "b": 7}))
-#             print(await session.call_tool("echo", {"text": "hello"}))
-
-# asyncio.run(main())
